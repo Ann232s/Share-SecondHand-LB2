@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электроника — SHERE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-category">
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </a>
+        </div>
+
+        <form class="search-form" action="#" method="GET">
+            <button type="button" class="search-category-btn">Все категории</button>
+            <input type="search" name="q" placeholder="Что ищем?" required>
+            <button type="submit" aria-label="Найти">
+                <img src="images/lup.png" alt="Найти">
+            </button>
+        </form>
+
+        <div class="user-actions">
+            <a href="cart.html" class="icon-favorites" title="Корзина">
+                <img src="images/car.png" alt="Корзина">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <a href="login.html" class="btn-account">Мой профиль ▼</a>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">ГЛАВНАЯ</a></li>
+            <li><a href="category.html" class="active">ЭЛЕКТРОНИКА</a></li>
+            <li><a href="category-clothes.html">ОДЕЖДА</a></li>
+            <li><a href="category-home.html">ДЛЯ ДОМА</a></li>
+            <li><a href="category-all.html">ВСЕ ОБЪЯВЛЕНИЯ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <div class="catalog-container">
+
+        <section class="page-header">
+            <h1 class="page-title">ЭЛЕКТРОНИКА</h1>
+            <p class="breadcrumbs">
+                <a href="index.html">ГЛАВНАЯ</a> /
+                <span>ЭЛЕКТРОНИКА</span>
+            </p>
+        </section>
+
+        <div class="catalog-wrapper">
+
+            <aside class="sidebar">
+
+                <div class="filter-block">
+                    <h3 class="filter-title">КАТЕГОРИЯ</h3>
+                    <ul class="filter-list">
+                        <li><a href="category.html" class="active">Электроника</a></li>
+                        <li><a href="category-clothes.html">Одежда</a></li>
+                        <li><a href="category-home.html">Для дома</a></li>
+                    </ul>
+                </div>
+
+                <div class="filter-block">
+                    <h3 class="filter-title">СОСТОЯНИЕ</h3>
+                    <ul class="filter-list">
+                        <li><a href="#" class="active" data-filter="all">Все</a></li>
+                        <li><a href="#" data-filter="new">Новое</a></li>
+                        <li><a href="#" data-filter="used">Б/У</a></li>
+                    </ul>
+                </div>
+
+                <div class="filter-block">
+                    <h3 class="filter-title">ГОРОД</h3>
+                    <ul class="filter-list">
+                        <li><a href="#">Харцызск</a></li>
+                        <li><a href="#">Донецк</a></li>
+                        <li><a href="#">Макеевка</a></li>
+                        <li><a href="#">Лондон</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+
+            <section class="catalog-main">
+
+                <div class="catalog-topbar">
+
+                    <div class="topbar-group">
+                        <h4>ТРЕНДЫ:</h4>
+                        <ul class="topbar-tags">
+                            <li><a href="#">Смартфоны</a></li>
+                            <li><a href="#">Ноутбуки</a></li>
+                            <li><a href="#">Наушники</a></li>
+                            <li><a href="#">Часы</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="topbar-group">
+                        <h4>СОСТОЯНИЕ:</h4>
+                        <ul class="topbar-sizes">
+                            <li><a href="#" data-filter="new">Новое</a></li>
+                            <li><a href="#" data-filter="used">Б/У</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="topbar-group">
+                        <h4>ЦЕНА:</h4>
+                        <input type="range" min="0" max="100000" step="500" value="50000" class="price-range">
+                        <div class="price-labels">
+                            <span>0 ₽</span>
+                            <span>100 000 ₽</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sort-bar">
+                    <span>Сортировать по:</span>
+                    <select class="sort-select">
+                        <option>Названию</option>
+                        <option>Цене (возр.)</option>
+                        <option>Цене (убыв.)</option>
+                        <option>Дате</option>
+                    </select>
+
+                    <span class="sort-count">Показано: <strong>9</strong></span>
+                </div>
+
+                <div class="products-grid catalog-grid">
+
+                    <article class="product-card" data-condition="new">
+                        <div class="product-image">
+                            <img src="images/z_n.jpg" alt="Зарядка iPhone">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Зарядка iPhone</h3>
+                        <p class="product-price">1 000 ₽</p>
+                        <p class="product-condition">Новое</p>
+                        <p class="product-location">Харцызск</p>
+                    </article>
+
+                    <article class="product-card" data-condition="used">
+                        <div class="product-image">
+                            <img src="images/tel_o.jpg" alt="Nokia 230 4G">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Nokia 230 4G</h3>
+                        <p class="product-price">800 ₽</p>
+                        <p class="product-condition">Б/У</p>
+                        <p class="product-location">Донецк</p>
+                    </article>
+
+                    <article class="product-card" data-condition="new">
+                        <div class="product-image">
+                            <img src="images/tab_n.jpg" alt="Galaxy Tab S12 Ultra">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Galaxy Tab S12 Ultra</h3>
+                        <p class="product-price">55 000 ₽</p>
+                        <p class="product-condition">Новое</p>
+                        <p class="product-location">Макеевка</p>
+                    </article>
+
+                    <article class="product-card" data-condition="used">
+                        <div class="product-image">
+                            <img src="images/p_o.jpg" alt="Паяльник">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Паяльник</h3>
+                        <p class="product-price">1 000 ₽</p>
+                        <p class="product-condition">Б/У</p>
+                        <p class="product-location">Харцызск</p>
+                    </article>
+
+                    <article class="product-card" data-condition="new">
+                        <div class="product-image">
+                            <img src="images/n_n.jpg" alt="Наушники">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Наушники</h3>
+                        <p class="product-price">2 500 ₽</p>
+                        <p class="product-condition">Новое</p>
+                        <p class="product-location">Донецк</p>
+                    </article>
+
+                    <article class="product-card" data-condition="used">
+                        <div class="product-image">
+                            <img src="images/mac_o.jpg" alt="Ноутбук">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Ноутбук</h3>
+                        <p class="product-price">3 000 ₽</p>
+                        <p class="product-condition">Б/У</p>
+                        <p class="product-location">Лондон</p>
+                    </article>
+
+                    <article class="product-card" data-condition="new">
+                        <div class="product-image">
+                            <img src="images/mac_n.jpg" alt="MacBook Pro">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">MacBook Pro</h3>
+                        <p class="product-price">120 000 ₽</p>
+                        <p class="product-condition">Новое</p>
+                        <p class="product-location">Лондон</p>
+                    </article>
+
+                    <article class="product-card" data-condition="new">
+                        <div class="product-image">
+                            <img src="images/lamp_n.jpg" alt="Лампа">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Лампа</h3>
+                        <p class="product-price">2 000 ₽</p>
+                        <p class="product-condition">Новое</p>
+                        <p class="product-location">Макеевка</p>
+                    </article>
+
+                    <article class="product-card" data-condition="used">
+                        <div class="product-image">
+                            <img src="images/fl_o.jpg" alt="Флешка">
+                            <button class="add-to-cart-btn">В избранное</button>
+                        </div>
+                        <h3 class="product-title">Флешка</h3>
+                        <p class="product-price">300 ₽</p>
+                        <p class="product-condition">Б/У</p>
+                        <p class="product-location">Харцызск</p>
+                    </article>
+
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-link prev">←</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link">4</a>
+                    <a href="#" class="page-link">5</a>
+                    <span class="page-dots">...</span>
+                    <a href="#" class="page-link">20</a>
+                    <a href="#" class="page-link next">→</a>
+                </div>
+
+                <div class="center-button">
+                    <a href="#" class="btn-primary btn-outline">Показать все</a>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <section class="promo-section">
+
+        <div class="promo-image">
+            <img src="images/logo_2.jpg" alt="SHERE — скидки и акции">
+        </div>
+
+        <div class="promo-features">
+
+            <div class="feature-item">
+                <h4>Быстрая доставка</h4>
+                <p>Отправляем товары по всей стране</p>
+            </div>
+
+            <div class="feature-item">
+                <h4>Выгодные цены</h4>
+                <p>Покупай дешевле, чем в магазинах</p>
+            </div>
+
+            <div class="feature-item">
+                <h4>Безопасность</h4>
+                <p>Проверенные продавцы и отзывы</p>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="subscribe-section">
+        <div class="testimonial">
+            <img src="images/me.jpg" alt="Пользователь">
+            <div>
+                <p class="testimonial-text">"Отличная барахолка! Продала старый телефон за один день. Всем рекомендую!"</p>
+                <p class="testimonial-author">Потапова Анастасия, Харцызск</p>
+            </div>
+        </div>
+        <div class="subscribe-form">
+            <h3>Подпишитесь на новости</h3>
+            <p>Узнавайте о новых объявлениях первыми</p>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </div>
+            <p>Барахолка нового поколения. Покупай, продавай, находи.</p>
+        </div>
+        <div class="footer-links">
+            <h4>КОМПАНИЯ</h4>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">Безопасность</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>ПОМОЩЬ</h4>
+            <ul>
+                <li><a href="#">Правила</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Поддержка</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>КАТЕГОРИИ</h4>
+            <ul>
+                <li><a href="category.html">Электроника</a></li>
+                <li><a href="category-clothes.html">Одежда</a></li>
+                <li><a href="category-home.html">Для дома</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 SHERE. Все права защищены.</p>
+        <div class="social-icons">
+            <a href="#">VK</a>
+            <a href="#">TG</a>
+            <a href="#">YT</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterLinks = document.querySelectorAll('[data-filter]');
+        const productCards = document.querySelectorAll('.catalog-grid .product-card');
+
+        filterLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const filter = this.getAttribute('data-filter');
+
+                filterLinks.forEach(function (l) {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                productCards.forEach(function (card) {
+                    const condition = card.getAttribute('data-condition');
+
+                    if (filter === 'all' || condition === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        document.querySelectorAll('.add-to-cart-btn').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const card = btn.closest('.product-card');
+                if (!card) return;
+
+                const image    = card.querySelector('.product-image img')?.getAttribute('src') || '';
+                const title    = card.querySelector('.product-title')?.textContent.trim() || 'Товар';
+                const priceStr = card.querySelector('.product-price')?.textContent.trim() || '0';
+                const condition = card.querySelector('.product-condition')?.textContent.trim() || '';
+                const location = card.querySelector('.product-location')?.textContent.trim() || '';
+
+                const price = parseFloat(priceStr.replace(/[^\d]/g, '')) || 0;
+
+                const cart = JSON.parse(localStorage.getItem('shere_cart') || '[]');
+
+                const existing = cart.find(item => item.title === title && item.image === image);
+
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({
+                        title: title,
+                        price: price,
+                        condition: condition,
+                        location: location,
+                        image: image,
+                        qty: 1
+                    });
+                }
+
+                localStorage.setItem('shere_cart', JSON.stringify(cart));
+
+                updateCartCount();
+
+                btn.textContent = '✓ Добавлено';
+                btn.style.background = '#2ecc71';
+                setTimeout(() => {
+                    btn.textContent = 'В избранное';
+                    btn.style.background = '';
+                }, 1200);
+            });
+        });
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('shere_cart') || '[]');
+            const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+            const countEl = document.getElementById('cart-count');
+            if (countEl) {
+                countEl.textContent = totalQty;
+                countEl.style.display = totalQty > 0 ? 'flex' : 'none';
+            }
+        }
+
+        updateCartCount();
+    });
+</script>
+</body>
+</html>

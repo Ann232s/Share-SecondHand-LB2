@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход и регистрация — SHERE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-login">
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </a>
+        </div>
+
+        <form class="search-form" action="#" method="GET">
+            <button type="button" class="search-category-btn">Все категории</button>
+            <input type="search" name="q" placeholder="Что ищем?" required>
+            <button type="submit" aria-label="Найти">
+                <img src="images/lup.png" alt="Найти">
+            </button>
+        </form>
+
+        <div class="user-actions">
+            <a href="cart.html" class="icon-favorites" title="Корзина">
+                <img src="images/car.png" alt="Корзина">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <a href="login.html" class="btn-account">Мой профиль ▼</a>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">ГЛАВНАЯ</a></li>
+            <li><a href="category.html">ЭЛЕКТРОНИКА</a></li>
+            <li><a href="category-clothes.html">ОДЕЖДА</a></li>
+            <li><a href="category-home.html">ДЛЯ ДОМА</a></li>
+            <li><a href="category-all.html">ВСЕ ОБЪЯВЛЕНИЯ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="login-header">
+        <h1 class="page-title">ЛИЧНЫЙ КАБИНЕТ</h1>
+        <p class="breadcrumbs">
+            <a href="index.html">ГЛАВНАЯ</a> /
+            <span>ВХОД И РЕГИСТРАЦИЯ</span>
+        </p>
+    </section>
+
+    <div class="login-wrapper">
+
+        <section class="login-column">
+            <h2 class="login-title">РЕГИСТРАЦИЯ</h2>
+            <p class="login-subtitle">Зарегистрируйтесь для дальнейшего удобства</p>
+
+            <form class="login-form" id="register-form" action="profile.html" method="GET" novalidate>
+
+                <div class="form-field">
+                    <label for="reg-name">ИМЯ *</label>
+                    <input type="text"
+                           id="reg-name"
+                           name="name"
+                           placeholder="Ваше имя"
+                           required
+                           minlength="2"
+                           maxlength="50"
+                           autocomplete="given-name">
+                </div>
+
+                <div class="form-field">
+                    <label for="reg-email">EMAIL *</label>
+                    <input type="email"
+                           id="reg-email"
+                           name="email"
+                           placeholder="example@mail.ru"
+                           required
+                           autocomplete="email">
+                </div>
+
+                <div class="form-field">
+                    <label for="reg-phone">ТЕЛЕФОН *</label>
+                    <input type="tel"
+                           id="reg-phone"
+                           name="phone"
+                           placeholder="+7 (999) 123-45-67"
+                           pattern="[+0-9()\s\-]{10,20}"
+                           required
+                           autocomplete="tel">
+                </div>
+
+                <div class="form-field">
+                    <label for="reg-city">ГОРОД *</label>
+                    <input type="text"
+                           id="reg-city"
+                           name="city"
+                           placeholder="Ваш город"
+                           required
+                           minlength="2"
+                           maxlength="50"
+                           autocomplete="address-level2">
+                </div>
+
+                <div class="form-field">
+                    <label for="reg-password">ПАРОЛЬ *</label>
+                    <input type="password"
+                           id="reg-password"
+                           name="password"
+                           placeholder="Не менее 6 символов"
+                           required
+                           minlength="6"
+                           autocomplete="new-password">
+                </div>
+
+                <div class="form-field">
+                    <label for="reg-password2">ПОВТОРИТЕ ПАРОЛЬ *</label>
+                    <input type="password"
+                           id="reg-password2"
+                           name="password2"
+                           placeholder="Повторите пароль"
+                           required
+                           minlength="6"
+                           autocomplete="new-password">
+                </div>
+
+                <div class="form-checkbox">
+                    <label>
+                        <input type="checkbox" name="agree" required>
+                        Я согласен с <a href="#">правилами сервиса</a> *
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+
+                <p class="form-hint">* — обязательные поля</p>
+            </form>
+
+            <div class="login-alt">
+                <h3>Хотите без регистрации?</h3>
+                <p>Продолжите как гость — сможете просматривать объявления и связаться с продавцами.</p>
+                <a href="index.html" class="btn-outline-link">ПРОДОЛЖИТЬ КАК ГОСТЬ</a>
+            </div>
+        </section>
+
+        <section class="login-column">
+            <h2 class="login-title">УЖЕ ЗАРЕГИСТРИРОВАНЫ?</h2>
+            <p class="login-subtitle">Войдите в свой аккаунт</p>
+
+            <form class="login-form" id="login-form" action="profile.html" method="GET" novalidate>
+
+                <div class="form-field">
+                    <label for="log-email">EMAIL *</label>
+                    <input type="email"
+                           id="log-email"
+                           name="email"
+                           placeholder="example@mail.ru"
+                           required
+                           autocomplete="email">
+                </div>
+
+                <div class="form-field">
+                    <label for="log-password">ПАРОЛЬ *</label>
+                    <input type="password"
+                           id="log-password"
+                           name="password"
+                           placeholder="Ваш пароль"
+                           required
+                           minlength="6"
+                           autocomplete="current-password">
+                </div>
+
+                <div class="form-checkbox">
+                    <label>
+                        <input type="checkbox" name="remember">
+                        Запомнить меня
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">ВОЙТИ</button>
+
+                <p class="form-hint">
+                    <a href="#">Забыли пароль?</a>
+                </p>
+            </form>
+
+            <div class="login-alt">
+                <h3>Преимущества аккаунта</h3>
+                <ul class="login-benefits">
+                    <li>Быстрое оформление покупок</li>
+                    <li>Доступ к истории заказов</li>
+                    <li>Сохранение избранных объявлений</li>
+                    <li>Общение с продавцами без ограничений</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <section class="subscribe-section">
+        <div class="testimonial">
+            <img src="images/me.jpg" alt="Пользователь">
+            <div>
+                <p class="testimonial-text">"Отличная барахолка! Продала старый телефон за один день. Всем рекомендую!"</p>
+                <p class="testimonial-author">Потапова Анастасия, Харцызск</p>
+            </div>
+        </div>
+        <div class="subscribe-form">
+            <h3>Подпишитесь на новости</h3>
+            <p>Узнавайте о новых объявлениях первыми</p>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Введите ваш email" required>
+                <button type="submit">Подписаться</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </div>
+            <p>Барахолка нового поколения. Покупай, продавай, находи.</p>
+        </div>
+        <div class="footer-links">
+            <h4>КОМПАНИЯ</h4>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">Безопасность</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>ПОМОЩЬ</h4>
+            <ul>
+                <li><a href="#">Правила</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Поддержка</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>КАТЕГОРИИ</h4>
+            <ul>
+                <li><a href="category.html">Электроника</a></li>
+                <li><a href="category-clothes.html">Одежда</a></li>
+                <li><a href="category-home.html">Для дома</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 SHERE. Все права защищены.</p>
+        <div class="social-icons">
+            <a href="#">VK</a>
+            <a href="#">TG</a>
+            <a href="#">YT</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const registerForm = document.getElementById('register-form');
+        if (registerForm) {
+            registerForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!registerForm.checkValidity()) {
+                    registerForm.reportValidity();
+                    return;
+                }
+
+                const p1 = document.getElementById('reg-password').value;
+                const p2 = document.getElementById('reg-password2').value;
+                if (p1 !== p2) {
+                    alert('Пароли не совпадают!');
+                    return;
+                }
+
+                const user = {
+                    name:  document.getElementById('reg-name').value.trim(),
+                    email: document.getElementById('reg-email').value.trim(),
+                    phone: document.getElementById('reg-phone').value.trim(),
+                    city:  document.getElementById('reg-city').value.trim(),
+                    registeredAt: new Date().toISOString()
+                };
+
+                localStorage.setItem('shere_user', JSON.stringify(user));
+
+                sessionStorage.setItem('shere_logged_in', 'true');
+
+                window.location.href = 'profile.html';
+            });
+        }
+
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!loginForm.checkValidity()) {
+                    loginForm.reportValidity();
+                    return;
+                }
+
+                const email = document.getElementById('log-email').value.trim();
+                let user = JSON.parse(localStorage.getItem('shere_user') || '{}');
+
+                if (!user.name) {
+                    user.name = email.split('@')[0];
+                }
+                user.email = email;
+
+                localStorage.setItem('shere_user', JSON.stringify(user));
+                sessionStorage.setItem('shere_logged_in', 'true');
+
+                window.location.href = 'profile.html';
+            });
+        }
+
+    });
+</script>
+
+</body>
+</html>

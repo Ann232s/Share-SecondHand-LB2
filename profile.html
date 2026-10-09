@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет — SHERE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-profile">
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </a>
+        </div>
+
+        <form class="search-form" action="#" method="GET">
+            <button type="button" class="search-category-btn">Все категории</button>
+            <input type="search" name="q" placeholder="Что ищем?" required>
+            <button type="submit" aria-label="Найти">
+                <img src="images/lup.png" alt="Найти">
+            </button>
+        </form>
+
+        <div class="user-actions">
+            <a href="cart.html" class="icon-favorites" title="Корзина">
+                <img src="images/car.png" alt="Корзина">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <a href="profile.html" class="btn-account" id="account-btn">Мой профиль ▼</a>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">ГЛАВНАЯ</a></li>
+            <li><a href="category.html">ЭЛЕКТРОНИКА</a></li>
+            <li><a href="category-clothes.html">ОДЕЖДА</a></li>
+            <li><a href="category-home.html">ДЛЯ ДОМА</a></li>
+            <li><a href="category-all.html">ВСЕ ОБЪЯВЛЕНИЯ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <h1 class="page-title">ЛИЧНЫЙ КАБИНЕТ</h1>
+        <p class="breadcrumbs">
+            <a href="index.html">ГЛАВНАЯ</a> /
+            <span>ЛИЧНЫЙ КАБИНЕТ</span>
+        </p>
+    </section>
+
+    <div class="profile-wrapper">
+
+        <aside class="profile-sidebar">
+
+            <div class="profile-user">
+
+                <label for="avatar-input" class="profile-avatar" title="Нажмите, чтобы загрузить фото">
+                    <img src="" alt="" id="profile-avatar">
+                    <span class="avatar-plus">+</span>
+                    <input type="file" id="avatar-input" accept="image/*" hidden>
+                </label>
+
+                <h2 class="profile-name" id="profile-name">Пользователь</h2>
+
+                <p class="profile-info">
+                    <span id="profile-email">email не указан</span>
+                </p>
+
+                <p class="profile-info">
+                    <span id="profile-city">Город не указан</span>
+                </p>
+
+            </div>
+
+            <nav class="profile-nav">
+                <ul>
+                    <li>
+                        <a href="login.html" class="logout" id="logout-btn">
+                            <span class="nav-icon">↩</span> Выйти
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </aside>
+
+        <section class="profile-main">
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </div>
+            <p>Барахолка нового поколения. Покупай, продавай, находи.</p>
+        </div>
+        <div class="footer-links">
+            <h4>КОМПАНИЯ</h4>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">Безопасность</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>ПОМОЩЬ</h4>
+            <ul>
+                <li><a href="#">Правила</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Поддержка</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>КАТЕГОРИИ</h4>
+            <ul>
+                <li><a href="category.html">Электроника</a></li>
+                <li><a href="category-clothes.html">Одежда</a></li>
+                <li><a href="category-home.html">Для дома</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 SHERE. Все права защищены.</p>
+        <div class="social-icons">
+            <a href="#">VK</a>
+            <a href="#">TG</a>
+            <a href="#">YT</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const isLoggedIn = sessionStorage.getItem('shere_logged_in');
+        if (!isLoggedIn) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        const user = JSON.parse(localStorage.getItem('shere_user') || '{}');
+
+        const nameEl = document.getElementById('profile-name');
+        if (nameEl) nameEl.textContent = user.name || 'Пользователь';
+
+        const emailEl = document.getElementById('profile-email');
+        if (emailEl) emailEl.textContent = user.email || 'email не указан';
+
+        const cityEl = document.getElementById('profile-city');
+        if (cityEl) cityEl.textContent = user.city || 'Город не указан';
+
+        const avatarImg = document.getElementById('profile-avatar');
+        const savedAvatar = localStorage.getItem('shere_avatar');
+        if (savedAvatar && avatarImg) {
+            avatarImg.src = savedAvatar;
+            avatarImg.alt = 'Аватар';
+            avatarImg.classList.add('has-image');
+        }
+
+        const avatarInput = document.getElementById('avatar-input');
+        if (avatarInput) {
+            avatarInput.addEventListener('change', function () {
+                const file = this.files[0];
+                if (!file) return;
+
+                if (!file.type.startsWith('image/')) {
+                    alert('Пожалуйста, выберите изображение');
+                    return;
+                }
+
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('Файл слишком большой. Максимум 2 МБ.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const dataURL = e.target.result;
+
+                    avatarImg.src = dataURL;
+                    avatarImg.alt = 'Аватар';
+                    avatarImg.classList.add('has-image');
+
+                    try {
+                        localStorage.setItem('shere_avatar', dataURL);
+                    } catch (err) {
+                        alert('Не удалось сохранить фото (возможно, файл слишком большой)');
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+                sessionStorage.removeItem('shere_logged_in');
+            });
+        }
+
+        const accountBtn = document.getElementById('account-btn');
+        if (accountBtn && user.name) {
+            accountBtn.textContent = user.name + ' ▼';
+        }
+
+    });
+</script>
+
+</body>
+</html>

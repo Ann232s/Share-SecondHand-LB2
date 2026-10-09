@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар — SHERE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-product">
+
+<header class="main-header">
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </a>
+        </div>
+
+        <form class="search-form" action="#" method="GET">
+            <button type="button" class="search-category-btn">Все категории</button>
+            <input type="search" name="q" placeholder="Что ищем?" required>
+            <button type="submit" aria-label="Найти">
+                <img src="images/lup.png" alt="Найти">
+            </button>
+        </form>
+
+        <div class="user-actions">
+            <a href="cart.html" class="icon-favorites" title="Корзина">
+                <img src="images/car.png" alt="Корзина">
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+            <a href="profile.html" class="btn-account" id="account-btn">Мой профиль</a>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">ГЛАВНАЯ</a></li>
+            <li><a href="category.html">ЭЛЕКТРОНИКА</a></li>
+            <li><a href="category-clothes.html">ОДЕЖДА</a></li>
+            <li><a href="category-home.html">ДЛЯ ДОМА</a></li>
+            <li><a href="category-all.html">ВСЕ ОБЪЯВЛЕНИЯ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <h1 class="page-title" id="product-page-title">ТОВАР</h1>
+        <p class="breadcrumbs">
+            <a href="index.html">ГЛАВНАЯ</a> /
+            <a href="category-all.html">ВСЕ ОБЪЯВЛЕНИЯ</a> /
+            <span id="product-crumb">ТОВАР</span>
+        </p>
+    </section>
+
+    <div class="product-view">
+
+        <div class="product-view-image">
+            <img src="" alt="" id="product-image">
+        </div>
+
+        <div class="product-view-info">
+
+            <h2 class="product-view-title" id="product-title">Загрузка</h2>
+
+            <p class="product-view-meta">
+                <span class="product-condition" id="product-condition">—</span>
+                <span class="product-view-location" id="product-location">—</span>
+            </p>
+
+            <p class="product-view-price" id="product-price">—</p>
+
+            <p class="product-view-description" id="product-description">—</p>
+
+            <div class="product-view-qty-block">
+                <label>Количество:</label>
+                <div class="product-view-qty">
+                    <button type="button" class="qty-btn" id="qty-minus">−</button>
+                    <span id="qty-value">1</span>
+                    <button type="button" class="qty-btn" id="qty-plus">+</button>
+                </div>
+            </div>
+
+            <div class="product-view-actions">
+                <button type="button" class="btn-primary" id="add-to-cart-btn">
+                    ДОБАВИТЬ В КОРЗИНУ
+                </button>
+                <a href="category-all.html" class="btn-outline-cart">
+                    ПРОДОЛЖИТЬ ПОКУПКИ
+                </a>
+            </div>
+
+            <div class="product-view-features">
+                <p>Быстрая доставка по всей стране</p>
+                <p>Безопасная сделка через SHERE</p>
+                <p>Связь с продавцом в личном кабинете</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="featured-section product-similar-section">
+        <h2 class="section-title">Вам может понравиться</h2>
+        <p class="section-subtitle">Похожие предложения от продавцов</p>
+
+        <div class="products-grid" id="similar-products"></div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="images/logo.png" alt="SHERE - Интернет-барахолка">
+            </div>
+            <p>Барахолка нового поколения. Покупай, продавай, находи.</p>
+        </div>
+        <div class="footer-links">
+            <h4>КОМПАНИЯ</h4>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">Безопасность</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>ПОМОЩЬ</h4>
+            <ul>
+                <li><a href="#">Правила</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Поддержка</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>КАТЕГОРИИ</h4>
+            <ul>
+                <li><a href="category.html">Электроника</a></li>
+                <li><a href="category-clothes.html">Одежда</a></li>
+                <li><a href="category-home.html">Для дома</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>2026 SHERE. Все права защищены.</p>
+        <div class="social-icons">
+            <a href="#">VK</a>
+            <a href="#">TG</a>
+            <a href="#">YT</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const SHERE_PRODUCTS = [
+        {id: 'z_n',    category: 'electronics', title: 'Зарядка iPhone',         price: 1000,   condition: 'new',  location: 'Харцызск', image: 'images/z_n.jpg',    description: 'Оригинальная зарядка для iPhone, быстрая зарядка 20W, длина кабеля 1 метр. Состояние новое, в упаковке.'},
+        {id: 'tel_o',  category: 'electronics', title: 'Nokia 230 4G',            price: 800,    condition: 'used', location: 'Донецк',    image: 'images/tel_o.jpg',  description: 'Классическая Nokia 230 4G, работает отлично, есть небольшие царапины на корпусе. Полный комплект.'},
+        {id: 'tab_n',  category: 'electronics', title: 'Galaxy Tab S12 Ultra',     price: 55000,  condition: 'new',  location: 'Макеевка',  image: 'images/tab_n.jpg',  description: 'Новейший планшет Samsung Galaxy Tab S12 Ultra, 256 ГБ, стилус в комплекте. Не использовался.'},
+        {id: 'p_o',    category: 'electronics', title: 'Паяльник',                 price: 1000,   condition: 'used', location: 'Харцызск',  image: 'images/p_o.jpg',    description: 'Паяльник 60W с регулировкой температуры. Работает, есть следы использования.'},
+        {id: 'n_n',    category: 'electronics', title: 'Наушники',                 price: 2500,   condition: 'new',  location: 'Донецк',    image: 'images/n_n.jpg',    description: 'Беспроводные наушники с шумоподавлением, время работы до 30 часов. Новые, в упаковке.'},
+        {id: 'mac_o',  category: 'electronics', title: 'Ноутбук',                  price: 3000,   condition: 'used', location: 'Лондон',    image: 'images/mac_o.jpg',  description: 'Рабочий ноутбук, 4 ГБ ОЗУ, 128 ГБ SSD. Подходит для учебы и работы.'},
+        {id: 'mac_n',  category: 'electronics', title: 'MacBook Pro',              price: 120000, condition: 'new',  location: 'Лондон',    image: 'images/mac_n.jpg',  description: 'MacBook Pro 14 M3, 16 ГБ, 512 ГБ SSD. Новый, гарантия 1 год.'},
+        {id: 'lamp_n', category: 'electronics', title: 'Лампа',                    price: 2000,   condition: 'new',  location: 'Макеевка',  image: 'images/lamp_n.jpg', description: 'Настольная LED-лампа с регулировкой яркости и USB-портом.'},
+        {id: 'fl_o',   category: 'electronics', title: 'Флешка',                   price: 300,    condition: 'used', location: 'Харцызск',  image: 'images/fl_o.jpg',   description: 'USB-флешка 32 ГБ, работает исправно.'},
+
+        {id: 'k_o',    category: 'clothes', title: 'Кофта',              price: 900,   condition: 'used', location: 'Харцызск',  image: 'images/k_o.jpg',    description: 'Теплая вязаная кофта, размер M, состояние отличное.'},
+        {id: 'kurt_n', category: 'clothes', title: 'Куртка',             price: 2500,  condition: 'new',  location: 'Донецк',    image: 'images/kurt_n.jpg', description: 'Стильная демисезонная куртка, размер L. Новая с бирками.'},
+        {id: 'sw_n',   category: 'clothes', title: 'Свитер',             price: 2000,  condition: 'new',  location: 'Макеевка',  image: 'images/sw_n.jpg',   description: 'Пушистый свитер oversize, размер S-M. Новый.'},
+        {id: 'p2_o',   category: 'clothes', title: 'Пайта',              price: 1000,  condition: 'used', location: 'Харцызск',  image: 'images/p2_o.jpg',   description: 'Удобная пайта, размер M, носилась пару раз.'},
+        {id: 'vet_o',  category: 'clothes', title: 'Ветровка',           price: 1200,  condition: 'used', location: 'Донецк',    image: 'images/vet_o.jpg',  description: 'Легкая ветровка, размер L, состояние хорошее.'},
+        {id: 'c_o',    category: 'clothes', title: 'Кепка',              price: 300,   condition: 'used', location: 'Лондон',    image: 'images/c_o.jpg',    description: 'Спортивная кепка, универсальный размер.'},
+        {id: 'tap_n',  category: 'clothes', title: 'Тапочки Гэрри',      price: 500,   condition: 'new',  location: 'Харцызск',  image: 'images/tap_n.jpg',  description: 'Мягкие домашние тапочки, размер 38. Новые.'},
+        {id: 'mus_n',  category: 'clothes', title: 'Пижама Мышка',       price: 1500,  condition: 'new',  location: 'Макеевка',  image: 'images/mus_n.jpg',  description: 'Уютная пижама с мышкой, размер S. Новая.'},
+        {id: 'pj_n',   category: 'clothes', title: 'Пижама',             price: 900,   condition: 'new',  location: 'Лондон',    image: 'images/pj_n.jpg',   description: 'Хлопковая пижама, размер M. Новая.'},
+
+        {id: 'kreslo_n', category: 'home', title: 'Кресло',              price: 1900,  condition: 'new',  location: 'Харцызск',  image: 'images/kreslo_n.jpg', description: 'Мягкое кресло для дома, обивка велюр, цвет бежевый.'},
+        {id: 'kover_o',  category: 'home', title: 'Ковер',               price: 500,   condition: 'used', location: 'Донецк',    image: 'images/kover_o.jpg',  description: 'Ковер 2 на 3 метра, состояние хорошее.'},
+        {id: 'diw_n',    category: 'home', title: 'Диван',               price: 25000, condition: 'new',  location: 'Макеевка',  image: 'images/diw_n.jpg',    description: 'Новый раскладной диван, ткань рогожка, 3-местный.'},
+        {id: 'hour_o',   category: 'home', title: 'Часы',                price: 1000,  condition: 'used', location: 'Харцызск',  image: 'images/hour_o.jpg',   description: 'Настенные часы с маятником, рабочие.'},
+        {id: 'stul_o',   category: 'home', title: 'Стул',                price: 1200,  condition: 'used', location: 'Донецк',    image: 'images/stul_o.jpg',   description: 'Деревянный стул, крепкий, состояние хорошее. Цена за штуку.'},
+        {id: 'polca_o',  category: 'home', title: 'Полка',               price: 900,   condition: 'used', location: 'Лондон',    image: 'images/polca_o.jpg',  description: 'Навесная полка из дерева, длина 80 см.'},
+        {id: 'tap2_n',   category: 'home', title: 'Горшочки для цветов', price: 500,   condition: 'new',  location: 'Харцызск',  image: 'images/tap2_n.jpg',   description: 'Керамические горшочки, 3 штуки в наборе. Новые.'},
+        {id: 'stt_o',    category: 'home', title: 'Статуэтка',           price: 300,   condition: 'used', location: 'Макеевка',  image: 'images/stt_o.jpg',    description: 'Фарфоровая статуэтка, винтаж.'},
+        {id: 'lampa_n',  category: 'home', title: 'Лампа',               price: 900,   condition: 'new',  location: 'Лондон',    image: 'images/lampa_n.jpg',  description: 'Настольная лампа в стиле лофт, металл и дерево.'},
+
+        {id: 'tshirt', category: 'clothes',     title: 'Футболка',        price: 800,  condition: 'new',  location: 'Харцызск', image: 'images/tshirt.jpg', description: 'Хлопковая футболка, размер M. Новая.'},
+        {id: 'player', category: 'electronics', title: 'Плеер',           price: 1500, condition: 'used', location: 'Донецк',    image: 'images/player.jpg', description: 'MP3-плеер, работает исправно.'},
+        {id: 'watch',  category: 'electronics', title: 'Карманные часы',  price: 5000, condition: 'used', location: 'Макеевка',  image: 'images/watch.jpg',  description: 'Винтажные карманные часы на цепочке.'},
+        {id: 'tie',    category: 'clothes',     title: 'Галстуки',        price: 100,  condition: 'new',  location: 'Лондон',    image: 'images/tie.jpg',    description: 'Классические галстуки, цена за штуку.'}
+    ];
+
+    const CATEGORY_LABELS = {
+        electronics: 'ЭЛЕКТРОНИКА',
+        clothes:     'ОДЕЖДА',
+        home:        'ДЛЯ ДОМА'
+    };
+    const CATEGORY_LINKS = {
+        electronics: 'category.html',
+        clothes:     'category-clothes.html',
+        home:        'category-home.html'
+    };
+    const CONDITION_LABELS = {
+        new:  'Новое',
+        used: 'Б/У'
+    };
+
+    function formatPrice(n) {
+        return n.toLocaleString('ru-RU') + ' руб.';
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id') || SHERE_PRODUCTS[0].id;
+    const product = SHERE_PRODUCTS.find(p => p.id === productId) || SHERE_PRODUCTS[0];
+
+    document.title = product.title + ' — SHERE';
+
+    document.getElementById('product-image').src = product.image;
+    document.getElementById('product-image').alt = product.title;
+    document.getElementById('product-title').textContent = product.title;
+    document.getElementById('product-price').textContent = formatPrice(product.price);
+    document.getElementById('product-location').textContent = product.location;
+    document.getElementById('product-description').textContent = product.description;
+
+    const condEl = document.getElementById('product-condition');
+    condEl.textContent = CONDITION_LABELS[product.condition] || '';
+    condEl.classList.add(product.condition === 'new' ? 'cond-new' : 'cond-used');
+
+    document.getElementById('product-page-title').textContent = CATEGORY_LABELS[product.category];
+    document.getElementById('product-crumb').textContent = product.title.toUpperCase();
+
+    const crumbLink = document.querySelector('.breadcrumbs a:nth-child(2)');
+    if (crumbLink) {
+        crumbLink.href = CATEGORY_LINKS[product.category];
+        crumbLink.textContent = CATEGORY_LABELS[product.category];
+    }
+
+    let qty = 1;
+    const qtyEl = document.getElementById('qty-value');
+
+    document.getElementById('qty-plus').addEventListener('click', function () {
+        qty++;
+        qtyEl.textContent = qty;
+    });
+
+    document.getElementById('qty-minus').addEventListener('click', function () {
+        if (qty > 1) {
+            qty--;
+            qtyEl.textContent = qty;
+        }
+    });
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', function () {
+        const cart = JSON.parse(localStorage.getItem('shere_cart') || '[]');
+        const existing = cart.find(item => item.id === product.id);
+
+        if (existing) {
+            existing.qty += qty;
+        } else {
+            cart.push({
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                condition: CONDITION_LABELS[product.condition],
+                location: product.location,
+                image: product.image,
+                qty: qty
+            });
+        }
+
+        localStorage.setItem('shere_cart', JSON.stringify(cart));
+
+        const btn = this;
+        btn.textContent = 'ДОБАВЛЕНО (' + qty + ')';
+        btn.style.background = '#2ecc71';
+        setTimeout(() => {
+            btn.textContent = 'ДОБАВИТЬ В КОРЗИНУ';
+            btn.style.background = '';
+        }, 1500);
+
+        updateCartCount();
+    });
+
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('shere_cart') || '[]');
+        const total = cart.reduce((s, i) => s + i.qty, 0);
+        const el = document.getElementById('cart-count');
+        if (el) {
+            el.textContent = total;
+            el.style.display = total > 0 ? 'flex' : 'none';
+        }
+    }
+    updateCartCount();
+
+    const similarEl = document.getElementById('similar-products');
+    const similar = SHERE_PRODUCTS
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 4);
+
+    if (similar.length < 4) {
+        const extra = SHERE_PRODUCTS
+            .filter(p => p.id !== product.id && !similar.includes(p))
+            .slice(0, 4 - similar.length);
+        similar.push(...extra);
+    }
+
+    similar.forEach(function (p) {
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.setAttribute('data-condition', p.condition);
+        card.innerHTML = `
+    <a href="product.html?id=${p.id}" class="product-link">
+      <div class="product-image">
+        <img src="${p.image}" alt="${p.title}">
+      </div>
+      <h3 class="product-title">${p.title}</h3>
+      <p class="product-price">${formatPrice(p.price)}</p>
+      <p class="product-condition">${CONDITION_LABELS[p.condition]}</p>
+      <p class="product-location">${p.location}</p>
+    </a>
+  `;
+        similarEl.appendChild(card);
+    });
+
+    const accountBtn = document.getElementById('account-btn');
+    const user = JSON.parse(localStorage.getItem('shere_user') || '{}');
+    if (accountBtn && user.name) {
+        accountBtn.textContent = user.name;
+    }
+</script>
+
+</body>
+</html>
